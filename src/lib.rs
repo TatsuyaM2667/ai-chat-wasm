@@ -21,15 +21,10 @@ pub async fn fetch(
     }
 }
 
-// 実際の処理を担当する非同期関数（例）
 async fn main_logic(
     req: worker::Request,
     env: worker::Env,
     _ctx: worker::Context,
 ) -> worker::Result<worker::Response> {
-    // ここにAIチャットのWasmロジックや、Leptosなどのルーティング、
-    // あるいはOpenAI/Cloudflare AI等のエンドポイント呼び出しを記述します。
-
-    // 単純な疎通確認用のレスポンス例:
     worker::Response::ok(&format!("Hello from Rust Wasm! Path: {}", req.path()))
 }

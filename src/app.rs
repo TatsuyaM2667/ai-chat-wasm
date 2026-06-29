@@ -13,7 +13,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <title>"Full-Stack Rust AI Chat"</title>
             </head>
             <body>
-                // 小文字の app コンポーネントを呼び出す
+
                 {App()}
             </body>
         </html>
