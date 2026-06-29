@@ -1,0 +1,14 @@
+name = "ai-chat-wasm"
+compatibility_date = "2026-06-29"
+
+main = "worker_shim.js"
+
+[site]
+bucket = "./target/site"
+
+[env.production]
+name = "ai-chat-wasm"
+
+[build]
+# ⭕ RUSTFLAGS を付与して getrandom や mio にWeb環境であることを教え込みます
+command = "RUSTFLAGS=\"--cfg=web_sys_unstable_apis --cfg getrandom_backend=\\\"wasm_js\\\"\" wasm-pack build --target web --out-dir worker_pkg --release -- --features ssr"
